@@ -35,4 +35,29 @@ When the user asks to "save changes," "push," or "commit":
 - "Commit changes to dev" -> (Stages changes, generates name, pushes to **dev**)
 - "Push my code" -> (Stages changes, generates name, pushes to **current active branch**)
 
+## Generate Changelog
+When the user asks to "update changelog," "generate changelog," or as part of a push workflow:
+
+1. **Run the script**:
+```bash
+   bash scripts/generate-changelog.sh
+```
+2. **Stage and commit the result**:
+```bash
+   git add CHANGELOG.md
+   git commit -m "docs: update changelog"
+   git push origin 
+```
+
+## Extended Push Workflow (with Changelog)
+When the user says "push with changelog" or "full push":
+1. Run `generate-changelog.sh`
+2. Stage all changes including `CHANGELOG.md`
+3. Generate conventional commit message for original changes
+4. Push everything in one commit
+
+## Usage Examples (extended):
+- "Update changelog" → runs script, commits `CHANGELOG.md`
+- "Push with changelog to main" → full workflow, pushes to **main**
+
 ---
