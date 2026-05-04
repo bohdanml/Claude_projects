@@ -2,6 +2,7 @@
 name: git-automation
 description: Analyze changes, generate conventional commit messages, and push to specific branches (main/dev/current).
 allowed-tools: Bash
+model: sonnet
 ---
 
 # Git Automation Workflow
